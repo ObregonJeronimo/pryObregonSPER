@@ -120,6 +120,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblNombreEmpresa);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmVenKaktus";
             this.Text = "Empresa VenKaktus";
