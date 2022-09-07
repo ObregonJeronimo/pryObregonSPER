@@ -43,7 +43,7 @@ namespace pryObregonSPER
         {
             TextWriter writeVentas = new StreamWriter("./ventas.txt", true);
 
-            writeVentas.WriteLine(Convert.ToString("ID del Cliente: " + cboIDCliente.Text + "\nID del Vendedor: " + cboIDVendedor.Text + "\nTipo de Factura: " + cboTipoFactura.Text + "\nNumero de factura: " + txtNumeroFactura.Text + "\nMonto: " + txtMontoFactura.Text + "\nFecha: " + dtpFecha.Text));
+            writeVentas.WriteLine(Convert.ToString("ID del Cliente: " + cboIDCliente.Text + "\nID del Vendedor: " + cboIDVendedor.Text + "\nTipo de Factura: " + cboTipoFactura.Text + "\nNumero de factura: " + txtNumeroFactura.Text + "\nMonto: " + txtMontoFactura.Text + "\nFecha: " + dtpFecha.Text + "\n" + "-------------------------------------"));
             writeVentas.Close();
 
             DialogResult datos = MessageBox.Show("¡Se han registrado los datos!" + "\n¿Desea registrar nuevamente mas datos?", "Exito", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
