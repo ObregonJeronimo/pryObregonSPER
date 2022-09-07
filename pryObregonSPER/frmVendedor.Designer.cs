@@ -105,7 +105,6 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Enabled = false;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.Location = new System.Drawing.Point(168, 182);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -133,6 +132,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmVendedor";
             this.Text = "Registro de Vendedor";
+            this.Load += new System.EventHandler(this.frmVendedor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

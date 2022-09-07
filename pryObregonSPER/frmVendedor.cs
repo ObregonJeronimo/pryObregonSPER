@@ -52,5 +52,9 @@ namespace pryObregonSPER
             }
         }
 
+        private void frmVendedor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
