@@ -39,5 +39,11 @@ namespace pryObregonSPER
             frmVentas frm3 = new frmVentas();
             frm3.ShowDialog();
         }
+
+        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsulta frm4 = new frmConsulta();
+            frm4.ShowDialog();
+        }
     }
 }
