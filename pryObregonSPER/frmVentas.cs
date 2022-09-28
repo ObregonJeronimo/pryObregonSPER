@@ -20,13 +20,18 @@ namespace pryObregonSPER
 
         private void frmVentas_Load(object sender, EventArgs e)
         {
+            //crear variables para leer los ADD
             StreamReader IDcliente = new StreamReader("./cliente.txt");
             StreamReader IDvendedor = new StreamReader("./vendedor.txt");
 
+            //sirve como un espacio en blanco 
             char separador = Convert.ToChar(" ");
 
+            //mientras IDcliente no llegue a fin de archivo
             while (!IDcliente.EndOfStream)
             {
+               //mientras clienteID sea diferente de EOF, leerá el archivo (ReadLine), y lo va a separar
+               //usando "separador" del tipo char
                 string[] cliente = IDcliente.ReadLine().Split(separador);
                 cboIDCliente.Items.Add(cliente[0]);
             }
@@ -41,11 +46,14 @@ namespace pryObregonSPER
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            TextWriter writeVentas = new StreamWriter("./ventas.txt", true);
+            //creo streamwriter para poder escribir en el ADD
+            StreamWriter writeVentas = new StreamWriter("./ventas.txt", true);
 
+            //writeline sirve para escribir dentro del streamwriter
             writeVentas.WriteLine(Convert.ToString("ID del Cliente: " + cboIDCliente.Text + "\nID del Vendedor: " + cboIDVendedor.Text + "\nTipo de Factura: " + cboTipoFactura.Text + "\nNumero de factura: " + txtNumeroFactura.Text + "\nMonto: " + txtMontoFactura.Text + "\nFecha: " + dtpFecha.Text + "\n" + "-------------------------------------"));
             writeVentas.Close();
 
+            //mensaje con condicion
             DialogResult datos = MessageBox.Show("¡Se han registrado los datos!" + "\n¿Desea registrar nuevamente mas datos?", "Exito", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (datos == DialogResult.Yes)
@@ -56,6 +64,7 @@ namespace pryObregonSPER
                 txtNumeroFactura.Text = "";
                 txtMontoFactura.Text = "";
             }
+            //si no desea cargar mas datos, cerrar frm
             if (datos == DialogResult.No)
             {
                 this.Close();
@@ -64,8 +73,11 @@ namespace pryObregonSPER
 
         private void txtNumeroFactura_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //evento keypress permite restringir el uso de diferentes caracteres,
+            //en este caso, del codigo ASCII
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
+                //mensaje que solo admite numeros
                 MessageBox.Show("Solo se aceptan numeros", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;

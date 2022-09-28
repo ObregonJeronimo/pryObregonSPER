@@ -20,16 +20,26 @@ namespace pryObregonSPER
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TextWriter CargaDatos = new StreamWriter("./cliente.txt", true);
+            //streamwriter para que pueda leer dentro de cliente.txt
+            StreamWriter CargaDatos = new StreamWriter("./cliente.txt", true);
 
+            //writeline sirve para escribir dentro del ADD
             CargaDatos.WriteLine(Convert.ToString(txtIDCliente.Text + " " + txtNombreCliente.Text));
+
+            //cierra StreamWriter
             CargaDatos.Close();
 
             MessageBox.Show("¡Se cargó el cliente con éxito!", ":D", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            //vaciar
             txtNombreCliente.Text = "";
             txtIDCliente.Text = "";
             txtNombreCliente.Focus();
+        }
+
+        private void frmCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

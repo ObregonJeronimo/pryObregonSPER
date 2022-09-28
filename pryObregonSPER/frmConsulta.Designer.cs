@@ -28,30 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvConsulta = new System.Windows.Forms.DataGridView();
             this.cIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cIDVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTipoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNumeroFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cMonto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsulta)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvConsulta
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsulta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cIDCliente,
             this.cIDVendedor,
             this.cTipoFactura,
             this.cNumeroFactura,
             this.cMonto,
             this.cFecha});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(637, 357);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvConsulta.Location = new System.Drawing.Point(-1, -1);
+            this.dgvConsulta.Name = "dgvConsulta";
+            this.dgvConsulta.Size = new System.Drawing.Size(638, 358);
+            this.dgvConsulta.TabIndex = 0;
+            this.dgvConsulta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // cIDCliente
             // 
@@ -88,17 +89,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 357);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvConsulta);
             this.Name = "frmConsulta";
             this.Text = "Consulta";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmConsulta_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsulta)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvConsulta;
         private System.Windows.Forms.DataGridViewTextBoxColumn cIDCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn cIDVendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTipoFactura;
